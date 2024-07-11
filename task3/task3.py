@@ -1,10 +1,15 @@
 import json
+import argparse
 
-# Наши пути к файлам.
-# При необходимости замените на свои :)
-report_path = 'report.json'
-tests_path = 'tests.json'
-values_path = 'values.json'
+# Устанавливаем пути к файлам.
+parser = argparse.ArgumentParser()
+parser.add_argument('report_path', help='report path', type=str)
+parser.add_argument('tests_path', help='tests path', type=str)
+parser.add_argument('values_path', help='values path', type=str)
+args = parser.parse_args()
+report_path = args.report_path
+tests_path = args.tests_path
+values_path = args.values_path
 
 # Выгружаем json-файлы в переменные.
 with open(tests_path) as file:

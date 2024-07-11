@@ -1,7 +1,12 @@
-# Наши пути к файлам.
-# При необходимости замените на свои :)
-circle_path = 'circle.txt'
-dots_path = 'dots.txt'
+import argparse
+
+
+# Устанавливаем пути к файлам.
+parser = argparse.ArgumentParser()
+parser.add_argument('circle_path', help='lenght of array', type=str)
+parser.add_argument('dots_path', help='dots path', type=str)
+args = parser.parse_args()
+circle_path, dots_path = args.circle_path, args.dots_path
 
 # Считываем данные по окружности:
 # радиус и координаты центра.

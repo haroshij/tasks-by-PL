@@ -1,6 +1,10 @@
-# Наш путь к файлу.
-# При необходимости замените на свои :)
-nums_path = 'nums.txt'
+import argparse
+
+# Устанавливаем пути к файлам.
+parser = argparse.ArgumentParser()
+parser.add_argument('nums_path', help='nums path', type=str)
+args = parser.parse_args()
+nums_path = args.nums_path
 
 # Открываем файл с числами в режиме чтения.
 with open(nums_path) as nums:

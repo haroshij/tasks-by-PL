@@ -1,3 +1,6 @@
+import argparse
+
+
 def circular_array_path(n, m):
     """Функция для определения пути
     по круговому массиву"""
@@ -24,8 +27,11 @@ def circular_array_path(n, m):
     print(res)
 
 
-# Получаем данные по n и m.
-n, m = map(int, input().split())
-
-# Запускаем функцию для определения пути
-circular_array_path(n, m)
+if __name__ == '__main__':
+    # Получаем данные по n и m.
+    parser = argparse.ArgumentParser()
+    parser.add_argument('n', help='lenght of array', type=int)
+    parser.add_argument('m', help='interval', type=int)
+    args = parser.parse_args()
+    n, m = args.n, args.m
+    circular_array_path(n, m)
